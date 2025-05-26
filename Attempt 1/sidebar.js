@@ -5,11 +5,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function showSidebar() {
     sidebar.classList.remove('hidden');
-    if (mainContent) mainContent.classList.add('sidebar-visible');
+    if (mainContent) {
+      mainContent.classList.add('sidebar-visible');
+      // Remove transform so it slides in
+      mainContent.style.transform = 'translateX(0)';
+    }
   }
   function hideSidebar() {
     sidebar.classList.add('hidden');
-    if (mainContent) mainContent.classList.remove('sidebar-visible');
+    if (mainContent) {
+      mainContent.classList.remove('sidebar-visible');
+      // Slide content left to match sidebar
+      mainContent.style.transform = 'translateX(-40px)';
+    }
   }
 
   if (hoverZone && sidebar) {

@@ -1,0 +1,110 @@
+/* General reset and body */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: linear-gradient(to right, #0f0f0f, #1f1f2e);
+  color: white;
+  height: 100vh;
+}
+
+/* Sidebar container */
+.sidebar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 220px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.4s ease;
+  z-index: 10;
+}
+
+/* Hide by sliding left */
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+/* Sidebar: modern, glow, bold, rounded */
+.sidebar li a {
+  color: #ffffffcc;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s cubic-bezier(.4,2,.6,1);
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-weight: 500;
+  box-shadow: 0 0 0px #00ffaa00;
+}
+
+.sidebar li a:hover, .sidebar li a.active {
+  background: rgba(0, 255, 170, 0.18);
+  color: #00ffaa;
+  font-weight: bold;
+  box-shadow: 0 0 16px 2px #00ffaa88, 0 2px 8px #00ffaa33;
+  padding-left: 18px;
+}
+
+.sidebar li {
+  padding: 16px 20px;
+}
+
+/* Page content beside menu */
+.title, .page-content {
+  margin-left: 240px;
+  padding: 60px;
+  transition: margin-left 0.4s cubic-bezier(.4,2,.6,1);
+}
+.sidebar.hidden ~ .title, .sidebar.hidden ~ .page-content {
+  margin-left: 40px;
+}
+
+/* Invisible hover zone on left side of screen */
+#hover-zone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 100vh;
+  z-index: 5;
+}
+
+/* Responsive sidebar */
+@media (max-width: 700px) {
+  .sidebar {
+    width: 60vw;
+    min-width: 120px;
+    max-width: 90vw;
+  }
+  .title, .page-content {
+    margin-left: 0 !important;
+    padding: 24px !important;
+  }
+}
+
+/* Input fields rounded */
+input, textarea, button {
+  border-radius: 20px;
+  border: none;
+  padding: 10px 16px;
+  margin: 8px 0;
+  font-size: 1rem;
+  outline: none;
+  background: #23233a;
+  color: #fff;
+  box-shadow: 0 2px 8px #00ffaa22;
+  transition: box-shadow 0.2s;
+}
+input:focus, textarea:focus, button:focus {
+  box-shadow: 0 0 8px 2px #00ffaa88;
+}
+
+button {
+  background: linear-gradient(90deg, #00ffaa 40%, #00aaff 100%);
+  color: #111;
+  font-weight: bold;
+  cursor: pointer;
+}

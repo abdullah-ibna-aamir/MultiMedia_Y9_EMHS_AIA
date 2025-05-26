@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auto-Hiding Sidebar Menu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Invisible hover zone to bring menu back -->
+  <div id="hover-zone"></div>
+
+  <!-- Sidebar navigation -->
+  <ul class="sidebar hidden" id="sidebar">
+    <li><a href="#" class="active" data-page="home">Home</a></li>
+    <li><a href="#" data-page="about">About</a></li>
+    <li><a href="#" data-page="contact">Contact</a></li>
+  </ul>
+
+  <!-- Main page content -->
+  <div class="title page-content" id="main-content">
+    <h1>Auto-Hiding Sidebar</h1>
+    <p>Welcome to the home page. Use the sidebar to navigate.</p>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>

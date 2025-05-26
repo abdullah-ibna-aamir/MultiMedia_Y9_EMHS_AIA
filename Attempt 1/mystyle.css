@@ -41,13 +41,16 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  transition: transform 0.4s cubic-bezier(.4,2,.6,1);
+  /* Smoother, simple transition for sidebar */
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 10;
   box-shadow: 2px 0 16px 0 #0a234244;
   border-right: 1.5px solid var(--blue-accent-light);
+  opacity: 1;
 }
 .sidebar.hidden {
   transform: translateX(-100%);
+  opacity: 0.5;
 }
 .sidebar li {
   padding: 18px 0;
@@ -94,7 +97,7 @@ body {
   max-width: none;
   margin: 0;
   box-sizing: border-box;
-  transition: margin-left 0.4s cubic-bezier(.4,2,.6,1);
+  transition: margin-left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .main-content.sidebar-visible {
   margin-left: 240px;
